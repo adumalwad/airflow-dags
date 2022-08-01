@@ -116,5 +116,5 @@ with DAG("anup_dag_3", start_date=datetime(2022, 1, 1),
             bash_command= "echo 'D is the best' "
         )
 
-        [Company_A,Company_B,Company_C,Company_D] >> Max_Month >> [Total_Sale_A,Total_Sale_B,Total_Sale_C,Total_Sale_D] >> Best_Company >> [best_A,best_B,best_C,best_D]
+        Company_A >> Company_B >> Company_C >> Company_D >> Max_Month >> [Total_Sale_A,Total_Sale_B,Total_Sale_C,Total_Sale_D] >> Best_Company >> [best_A,best_B,best_C,best_D]
 
