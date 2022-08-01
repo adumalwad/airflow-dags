@@ -8,7 +8,8 @@ from datetime import datetime
 def _create_list():
     list1=[]
     for i in range(1000):
-        list1.append(randint(1,100))
+        list1.append(25)
+        #list1.append(randint(1,100))
     return list1
 
 def _print_list(ti):
