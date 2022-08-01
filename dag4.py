@@ -48,12 +48,12 @@ def best_sale(ti):
     list3=ti.xcom_pull(task_ids=['sum_a','sum_b','sum_c','sum_d'])
     m=max(list3)
     if(m==list3[0]):
-        return 'best_A'
+        return 'best_A1'
     elif(m==list3[1]):
-        return 'best_B'
+        return 'best_B1'
     elif(m==list3[2]):
-        return 'best_C'
-    return 'best_D'
+        return 'best_C1'
+    return 'best_D1'
 
 with DAG("anup_dag_3", start_date=datetime(2022, 1, 1),
     schedule_interval="@daily", catchup=False) as dag:
@@ -99,19 +99,19 @@ with DAG("anup_dag_3", start_date=datetime(2022, 1, 1),
             python_callable=best_sale
         )
         best_A = BashOperator(
-            task_id="best_A",
+            task_id="best_A1",
             bash_command= "echo 'A is the best' "
         )
         best_B = BashOperator(
-            task_id="best_B",
+            task_id="best_B1",
             bash_command= "echo 'B is the best' "
         )
         best_C = BashOperator(
-            task_id="best_C",
+            task_id="best_C1",
             bash_command= "echo 'C is the best' "
         )
         best_D = BashOperator(
-            task_id="best_A",
+            task_id="best_D1",
             bash_command= "echo 'D is the best' "
         )
 
