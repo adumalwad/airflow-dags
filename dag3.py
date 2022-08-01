@@ -32,7 +32,7 @@ def _print_median(ti):
     median1=0
     n=len(list1)
     if(n%2==0):
-        median1=(list1[n//2]+list1[(n//2)-1])
+        median1=(list1[n//2]+list1[(n//2)-1])/2
     else:
         median1=list1[n//2]
     print(median1)
@@ -43,8 +43,7 @@ def _is_equal(ti):
     median=ti.xcom_pull(task_ids='Find_Median')
     if(mean==median):
         return 'Equal'
-    else:
-        return 'Not_Equal'
+    return 'Not_Equal'
 
 
 with DAG("anup_dag_2", start_date=datetime(2022, 1, 1),
