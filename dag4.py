@@ -9,6 +9,7 @@ def create_list():
     list1=[]
     for i in range(12):
         list1.append(randint(100,500)*1000)
+    return list1
 
 def max_by_month(ti):
     ca=ti.xcom_pull(task_ids='Company_A')
