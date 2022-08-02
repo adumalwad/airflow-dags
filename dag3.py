@@ -1,6 +1,7 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator, BranchPythonOperator
 from airflow.operators.bash import BashOperator
+import logging
 
 from random import randint
 from datetime import datetime
@@ -8,7 +9,7 @@ from datetime import datetime
 def _create_list():
     list1=[]
     for i in range(1000):
-        print("adding new element")
+        logging.info("Adding Element")
         list1.append(25)
         #list1.append(randint(1,100))
     return list1
