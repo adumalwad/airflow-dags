@@ -51,7 +51,7 @@ with DAG("anup_dag_4", start_date=datetime(2022, 1, 1),
             task_id="Fail_List",
             python_callable=_fail_list
         )
-        Class_Quality = PythonOperator(
+        Class_Quality = BranchPythonOperator(
             task_id="Class_Quality",
             python_callable=_class_quality
         )
