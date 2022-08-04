@@ -71,7 +71,7 @@ with DAG("anup_dag_2", start_date=datetime(2022, 1, 1),
             task_id="Find_Median",
             python_callable=_print_median
         )
-        Is_Equal = PythonOperator(
+        Is_Equal = BranchPythonOperator(
             task_id="Is_Equal",
             python_callable=_is_equal
         )
