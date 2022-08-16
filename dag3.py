@@ -51,7 +51,7 @@ def _is_equal(ti):
 
 
 with DAG("anup_dag_2", start_date=datetime(2022, 1, 1),
-    schedule_interval="@daily", catchup=False) as dag:
+    schedule_interval="@daily", catchup=False,max_active_runs=30) as dag:
 
         Create_List = PythonOperator(
             task_id="Create_List",
