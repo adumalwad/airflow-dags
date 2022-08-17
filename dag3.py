@@ -6,9 +6,10 @@ import logging
 from random import randint
 from datetime import datetime
 
-def _create_list():
+def _create_list(ti, **context):
     list1=[]
-    for i in range(1000):
+    n = context['dag_run'].conf['arr_size']
+    for i in range(x):
         logging.info("Adding Element")
         #list1.append(25)
         list1.append(randint(1,100))
