@@ -9,7 +9,7 @@ from datetime import datetime
 def _create_list(ti, **context):
     list1=[]
     n = context['dag_run'].conf['arr_size']
-    for i in range(x):
+    for i in range(n):
         logging.info("Adding Element")
         #list1.append(25)
         list1.append(randint(1,100))
