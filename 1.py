@@ -6,11 +6,12 @@ import subprocess
 
 def excuteC():
 	#s = SubprocessHook.run_command(self,"gcc 3.c -o out1;./out1",env=None, output_encoding='utf-8', cwd=None)
-	s = subprocess.check_call("gcc 3.c -o out1;./out1", shell = True)
+	#s = subprocess.check_call("gcc 3.c -o out1;./out1", shell = True)
+	s = subprocess.check_call("./out1", shell = True)
 	print(", return code", s)
 
 def executeCpp():
-	s = subprocess.check_output("g++ 2.cpp -o out2;./out2", shell = True)
+	s = subprocess.check_output("./out2", shell = True)
 	print(s.decode("utf-8"))
 
 def Execute_Python1():
