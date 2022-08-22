@@ -7,7 +7,7 @@ import subprocess
 def excuteC():
 	#s = SubprocessHook.run_command(self,"gcc 3.c -o out1;./out1",env=None, output_encoding='utf-8', cwd=None)
 	#s = subprocess.check_call("gcc 3.c -o out1;./out1", shell = True)
-	s = subprocess.check_call("./out1", shell = True)
+	s = subprocess.check_call("ls", shell = True)
 	print(", return code", s)
 
 def executeCpp():
