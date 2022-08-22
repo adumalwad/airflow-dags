@@ -1,11 +1,12 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-
+from airflow.hooks.subprocess import SubprocessHook
 from datetime import datetime
 import subprocess
 
 def excuteC():
-	s = subprocess.check_call("gcc 3.c -o out1;./out1", shell = True)
+	s = SubprocessHook.run_command(self,"gcc 3.c -o out1;./out1",env=None, output_encoding='utf-8', cwd=None)
+	#s = subprocess.check_call("gcc 3.c -o out1;./out1", shell = True)
 	print(", return code", s)
 
 def executeCpp():
